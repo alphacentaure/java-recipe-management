@@ -1,0 +1,247 @@
+springdoc:
+  swagger-ui:
+    path: /openapi/swagger-ui.html
+    defaultModelsExpandDepth: 1 
+    display-request-duration: true
+    groups-order: asc
+    operationsSorter: method
+  api-docs:
+    path: /openapi/v3/api-docs
+  packagesToScan: com.rma.demov2
+  pathsToMatch: /api/v1/** 
+
+api:
+  common:
+    version: 1.0.0
+    title: "Recipe Management API"
+    description:
+      This is a sample Recipe Server that provide an API to act as a library for the user.
+      The backend server handle Recipes and Ingredients.
+    license: NO LICENSE
+
+    responseCodes:
+      ok.description: OK
+      created.description: Content has been created
+      noContent.description: No content, the list is empty
+      badRequest.description: Bad Request, invalid format of the request. See response message for more information
+      notFound.description: Not found, the specified id does not exist
+      notAcceptable.description: Not acceptable value
+      acceptable.description: Acceptable value
+      unprocessableEntity.description: Unprocessable entity, input parameters caused the processing to fail. See response message for more information
+
+  ingredient-controller-info:
+    name: ingredient-controller
+    description: REST API for INGREDIENT
+    get-all-ingredients:
+      summary: Returns all INGREDIENTS alphabetically sorted by NAME
+      description: |
+        # Normal response
+        IF the database has any values THEN the method will return a **list of datas** with the following informations
+        1. The ID
+        2. The NAME
+        3. The DATE OF CREATION (automatically assigned by the system when element is create)
+        4. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## INGREDIENTs available
+        200 - **OK** - Successful operation, all data will be returned
+        ## NO INGREDIENTs available
+        204 - **No content** -IF the database is empty THEN no datas will be return
+    get-single-ingredient:
+      summary: Return one INGREDIENT by ID
+      description: |
+        # Normal response
+        IF the find methode has a value THEN the method will return **a single data** with the following informations
+        1. The ID
+        2. The NAME
+        3. The DATE OF CREATION (automatically assigned by the system when element is create)
+        4. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## One INGREDIENT found
+        200 - **OK** - Successful operation, one data will be returned
+        ## NO INGREDIENT found
+        404 - **Not found** - IF there is no matching in the database for the ID supplied THEN no return
+        ## Negative ID is NOT Acceptable 
+        406 - **Wrong ID** - WHEN the ID supplied is negative
+    put-single-ingredient:
+      summary: Update one INGREDIENT by ID
+      description: |
+        # Normal response
+        IF the INGREDIENT has been **updated** THEN the method will return **a single data** with the following informations
+        1. The ID
+        2. The NAME
+        3. The DATE OF CREATION (automatically assigned by the system when element is create)
+        4. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## One INGREDIENT has been **UPDATED**
+        200 - **OK** - Successful operation, one data will be returned
+        ## NO INGREDIENT found to **UPDATE**
+        404 - **Not found** - IF there is no matching in the database for the ID supplied THEN no return
+        ## Negative ID is **NOT Acceptable**
+        406 - **Wrong ID** - WHEN the ID supplied is negative
+    delete-single-ingredient:
+      summary: Delete one INGREDIENT by ID
+      description: |
+        # Normal response
+        IF the INGREDIENT has been **deleted** THEN the method will not return data
+
+        # Expected responses
+        ## One INGREDIENT has been **DELETE**
+        200 - **OK** - Successful operation, no data will be returned
+        ## NO INGREDIENT found to **DELETE**
+        404 - **Not found** - IF there is no matching in the database for the ID supplied THEN no return
+        ## Negative ID is **NOT Acceptable**
+        406 - **Wrong ID** - WHEN the ID supplied is negative
+    create-single-INGREDIENT:
+      summary: Create one INGREDIENT
+      description: |
+        # Normal response
+        IF the INGREDIENT has been **create** THEN the method will return **a single data** with the following informations 
+
+        1. The ID (automatically assigned by the system when element is create)
+        2. The NAME
+        3. The DATE OF CREATION (automatically assigned by the system when element is create)
+        4. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## One INGREDIENT has been **CREATE**
+        201 - **CREATED** - Successful operation, IF one data has been **create** THEN the new data will be returned
+        ## NO INGREDIENT has been **CREATE**
+        406 - **Wrong DATA** - WHEN null DATA has been supply
+  recipe-controller-info:
+    name: recipe-controller
+    description: REST API for RECIPE
+    get-all-recipes:
+      summary: Returns all RECIPES alphabetically sorted by NAME
+      description: |
+        # Normal response
+        IF the database has any values THEN the method will return a **list of datas** with the following informations
+
+        1. The ID
+        2. The NAME 
+        3. The DESCRIPTION
+        4. The INSTRUCTION
+        5. The List Of INGREDIENT Selected
+        6. The DATE OF CREATION (automatically assigned by the system when element is create)
+        7. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## RECIPEs available
+        200 - **OK** - Successful operation, all data will be returned
+        ## NO RECIPEs available
+        204 - **No content** -IF the database is empty THEN no datas will be return
+    get-single-recipe:
+      summary: Return one RECIPE by ID
+      description: |
+        # Normal response
+        IF the find methode has a value THEN the method will return **a single data** with the following informations
+
+        1. The ID
+        2. The NAME 
+        3. The DESCRIPTION
+        4. The INSTRUCTION
+        3. The List Of INGREDIENT Selected
+        4. The DATE OF CREATION (automatically assigned by the system when element is create)
+        5. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## One RECIPE found
+        200 - **OK** - Successful operation, one data will be returned
+        ## NO RECIPE found
+        404 - **Not found** - IF there is no matching in the database for the ID supplied THEN no return
+        ## Negative ID is NOT Acceptable 
+        406 - **Wrong ID** - WHEN the ID supplied is negative 
+    put-single-recipe:
+      summary: Update one RECIPE by ID
+      description: |
+        # Normal response
+        IF the RECIPE has been **updated** THEN the method will return **a single data** with the following informations
+
+        1. The ID
+        2. The NAME 
+        3. The DESCRIPTION
+        4. The INSTRUCTION
+        5. The List Of INGREDIENT Selected
+        6. The DATE OF CREATION (automatically assigned by the system when element is create)
+        7. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## One RECIPE has been **UPDATED**
+        200 - **OK** - Successful operation, one data will be returned
+        ## NO RECIPE found to **UPDATE**
+        404 - **Not found** - IF there is no matching in the database for the ID supplied THEN no return
+        ## Negative ID is **NOT Acceptable**
+        406 - **Wrong ID** - WHEN the ID supplied is negative 
+    delete-single-recipe:
+      summary: Delete one RECIPE by ID
+      description: |
+        # Normal response
+        IF the RECIPE has been **deleted** THEN the method will not return data
+
+        # Expected responses
+        ## One RECIPE has been **DELETE**
+        200 - **OK** - Successful operation, no data will be returned
+        ## NO RECIPE found to **DELETE**
+        404 - **Not found** - IF there is no matching in the database for the ID supplied THEN no return
+        ## Negative ID is **NOT Acceptable**
+        406 - **Wrong ID** - WHEN the ID supplied is negative 
+    create-single-recipe:
+      summary: Create one RECIPE
+      description: |
+        # Normal response
+        IF the RECIPE has been **create** THEN the method will return **a single data** with the following informations 
+
+        1. The ID (automatically assigned by the system when element is create)
+        2. The NAME 
+        3. The DESCRIPTION
+        4. The INSTRUCTION
+        5. The List Of INGREDIENTs Selected
+        6. The DATE OF CREATION (automatically assigned by the system when element is create)
+        7. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## One RECIPE has been **CREATE**
+        201 - **CREATED** - Successful operation, IF one data has been **create** THEN the new data will be returned
+        ## NO RECIPE has been **CREATE**
+        406 - **Wrong DATA** - WHEN null DATA has been supply
+    add-ingredient-to-recipe:
+      summary: Add a INGREDIENT to the RECIPE
+      description: |
+        # Normal response
+        IF the INGREDIENT has been **add** to the RECIPE THEN the method will return **a single data** with the following informations 
+
+        1. The ID (automatically assigned by the system when element is create)
+        2. The NAME 
+        3. The DESCRIPTION
+        4. The INSTRUCTION
+        5. The List Of INGREDIENTs Updated
+        6. The DATE OF CREATION (automatically assigned by the system when element is create)
+        7. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## One INGREDIENT has been **ADD** to the RECIPE
+        202 - **Accepted** - Successful operation, IF one data has been **add** THEN the updated list of INGREDIENTs will be returned
+        ## NO INGREDIENT has been **ADD**
+        406 - **Wrong DATA** - WHEN null DATA or empty ID has been supply
+    remove-ingredient-from-recipe:
+      summary: Remove a INGREDIENT from the RECIPE
+      description: |
+        # Normal response
+        IF the INGREDIENT has been **remove** from the RECIPE THEN the method will return **a single data** with the following informations 
+
+        1. The ID (automatically assigned by the system when element is create)
+        2. The NAME 
+        3. The DESCRIPTION
+        4. The INSTRUCTION
+        5. The List Of INGREDIENTs Updated
+        6. The DATE OF CREATION (automatically assigned by the system when element is create)
+        7. The UPDATE DATE (automatically assigned by the system when element is update otherwise no value)
+
+        # Expected responses
+        ## One INGREDIENT has been **REMOVED** from the RECIPE
+        202 - **Accepted** - Successful operation, IF one data has been **remove** THEN the updated list of INGREDIENTs will be returned
+        ## NO INGREDIENT has been **REMOVED**
+        406 - **Wrong DATA** - WHEN null DATA or empty ID has been supply 
+

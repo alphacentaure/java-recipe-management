@@ -1,0 +1,16 @@
+com/rma/demov2/Demov2Application.class
+com/rma/demov2/microservices/ingredient/persistence/IngredientEntity$IngredientEntityBuilder.class
+com/rma/demov2/microservices/recipe/persistence/RecipeEntity$RecipeEntityBuilder.class
+com/rma/demov2/microservices/ingredient/persistence/IngredientJpaRepository.class
+com/rma/demov2/microservices/recipe/persistence/RecipeJpaRepository.class
+com/rma/demov2/microservices/recipe/persistence/RecipeEntity.class
+com/rma/demov2/microservices/recipe/api/RecipeService.class
+com/rma/demov2/microservices/ingredient/controller/IngredientController.class
+com/rma/demov2/microservices/ingredient/api/IngredientDTO.class
+com/rma/demov2/microservices/recipe/api/RecipeDTO.class
+com/rma/demov2/microservices/recipe/controller/RecipeController.class
+com/rma/demov2/microservices/ingredient/persistence/IngredientEntity.class
+com/rma/demov2/microservices/ingredient/api/IngredientDTO$IngredientDTOBuilder.class
+com/rma/demov2/microservices/utilities/GlobalMapper.class
+com/rma/demov2/microservices/ingredient/api/IngredientService.class
+com/rma/demov2/microservices/recipe/api/RecipeDTO$RecipeDTOBuilder.class

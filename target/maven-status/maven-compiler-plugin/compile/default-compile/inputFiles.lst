@@ -1,0 +1,12 @@
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/recipe/persistence/RecipeEntity.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/recipe/persistence/RecipeJpaRepository.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/recipe/api/RecipeDTO.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/ingredient/persistence/IngredientEntity.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/ingredient/controller/IngredientController.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/ingredient/persistence/IngredientJpaRepository.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/recipe/controller/RecipeController.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/Demov2Application.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/ingredient/api/IngredientDTO.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/ingredient/api/IngredientService.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/recipe/api/RecipeService.java
+/home/devops/SpringBoot/demov2/src/main/java/com/rma/demov2/microservices/utilities/GlobalMapper.java
