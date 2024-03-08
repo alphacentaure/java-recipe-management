@@ -15,9 +15,7 @@
 
 * Commandes 
 ```
-$ git clone https://github.com/XXXXXXX
-
-$ cd ebibliov1
+$ git clone https://github.com/alphacentaure/java-recipe-management
 
 $ mvn clean install
 
@@ -36,9 +34,7 @@ $ http://localhost:8080/openapi/swagger-ui/index.html
 
 * Commandes 
 ```
-$ git clone https://github.com/XXXXXXX
-
-$ cd ebibliov1
+$ git clone https://github.com/alphacentaure/java-recipe-management
 
 $ ./mvnw test
 
